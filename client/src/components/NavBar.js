@@ -12,6 +12,7 @@ function NavBar({ user, setUser }) {
 
   return (
     <header>
+      <h1>Horror Story</h1>
       <div>
         <Link to="/">Home</Link>
       </div>
