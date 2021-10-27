@@ -4,7 +4,6 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
     const [mainCharacter, setMainCharacter] = useState("");
     const [typeOfHorror, setTypeOfHorror] = useState("");
     const [setting, setSetting] = useState("");
-    const [goodOrEvil, setGoodOrEvil] = useState("");
     const [liveOrDie, setLiveOrDie] = useState("");
   
     function handleSubmit(e) {
@@ -18,7 +17,6 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
           mainCharacter,
           typeOfHorror,
           setting,
-          goodOrEvil,
           liveOrDie,
         }),
       }).then((r) => {
@@ -49,12 +47,6 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
                 type="text"
                 value={setting}
                 onChange={(e) => setSetting(e.target.value)}
-                />
-                <label htmlFor="good-or-evil">Good or Evil</label>
-                <input
-                type="text"
-                value={goodOrEvil}
-                onChange={(e) => setGoodOrEvil(e.target.value)}
                 />
                 <label htmlFor="live-or-die">Live or Die</label>
                 <input

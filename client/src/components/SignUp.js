@@ -30,7 +30,7 @@ function SignUp({ setUser }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
+        <h2>Sign Up</h2>
         <label htmlFor="username">Username</label>
         <input
           type="text"

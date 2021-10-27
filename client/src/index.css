@@ -1,7 +1,52 @@
 h1 {
-  font-size: 40px;
+    font-size: 30px;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.profile-image {
-  height: 60px;
-  width: auto;
+
+h2 {
+    font-size: 20px
+}
+
+.nav-bar-container {
+    text-align: left;
+    background: gray
+}
+
+.nav-bar-link {
+    text-decoration: none;
+    display: inline;
+    padding: 8px;
+}
+
+.login-signup-form-container {
+    display: block;
+    align-items: left;
+}
+
+.login-signup-form {
+    padding-left: 15px;
+    align-items: left;
+    background: none;
+    justify-content: left;
+    width: 270px;
+    height: 30px;
+    display: block;
+    border: white solid 3px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.login-signup-button {
+    text-decoration: none;
+    font-family: "Raleway";
+    background: gray;
+    justify-content: left;
+    width: 270px;
+    height: 30px;
+    display: block;
+    border: white solid 3px;
+    border-radius: 15px;
+    box-sizing: border-box;
 }
