@@ -25,8 +25,8 @@ class Story < ApplicationRecord
         elsif chooser == 2 && alive == true
             place = "ancient spaceship’s armory" 
             monster = "intergalactic hunter"
-            killing = "had blasted #{main}’s entire crew to death… everyone from the chef to the marines
-            old sewers"
+            killing = "had blasted #{main}’s entire crew to death… everyone from the chef to the marines"
+            old = "sewers"
             weapon = "spear" 
             explanation = "Most of the weapons in this wrecked spaceship were worthless, but #{main} spotted an intact suit of advanced armor. #{main} pulled the armor down—it was far too heavy for a human, but inside of it there was a surprise! #{main} pulled out a functioning plasma rifle!"
             tool = "plasma rifle"
@@ -35,8 +35,8 @@ class Story < ApplicationRecord
         elsif chooser == 2 && alive == false
             place = "ancient spaceship’s armory" 
             monster = "intergalactic hunter"
-            killing = "had blasted #{main}’s entire crew to death… everyone from the chef to the marines
-            old sewers"
+            killing = "had blasted #{main}’s entire crew to death… everyone from the chef to the marines"
+            old = "sewers"
             weapon = "spear" 
             explanation = "Most of the weapons in this wrecked spaceship were worthless, but #{main} spotted an intact suit of advanced armor. #{main} pulled the armor down—it was far too heavy for a human, but inside of it there was a surprise! #{main} pulled out a functioning plasma rifle!"
             tool = "plasma rifle"
