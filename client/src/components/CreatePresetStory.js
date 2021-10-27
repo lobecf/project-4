@@ -4,7 +4,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function CreatePresetStory ( {setUserStoryInfo} ) {
+function CreatePresetStory ( ) {
     const [mainCharacter, setMainCharacter] = useState("");
     const [optionsType, setTypeOfHorror] = useState("");
     const [settingsType, setSetting] = useState("");
@@ -25,7 +25,7 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
         }),
       }).then((r) => {
         if (r.ok) {
-          r.json().then((user) => setUserStoryInfo(user));
+          r.json().then((user) => console.log(user));
         }
       });
     }
@@ -52,21 +52,22 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
                 value={mainCharacter}
                 onChange={(e) => setMainCharacter(e.target.value)}
                 />
-            <DropdownButton onSelect={handleOption} id="options" title="Select horror genre">
-              <Dropdown.Item href="#/slasher">Slasher</Dropdown.Item>
-              <Dropdown.Item href="#/monster">Monster</Dropdown.Item>
-              <Dropdown.Item href="#/child">Evil Child</Dropdown.Item>
-            </DropdownButton>
-            <DropdownButton onSelect={handleSetting} id="setting" title="Select your setting">
-              <Dropdown.Item href="#/college">College</Dropdown.Item>
-              <Dropdown.Item href="#/mythology">Mythology</Dropdown.Item>
-              <Dropdown.Item href="#/scifi">Sci-Fi</Dropdown.Item>
-              <Dropdown.Item href="#/gothic">Gothic</Dropdown.Item>
-            </DropdownButton>
-            <DropdownButton onSelect={handleLive} id="live" title="Do you live or die?">
-              <Dropdown.Item href="#/live">Live 👼</Dropdown.Item>
-              <Dropdown.Item href="#/die">Die 💀</Dropdown.Item>
-           </DropdownButton>
+                <DropdownButton onSelect={handleOption} id="options" title="Select horror genre">
+                  <Dropdown.Item href="#/slasher">Slasher</Dropdown.Item>
+                  <Dropdown.Item href="#/monster">Monster</Dropdown.Item>
+                  <Dropdown.Item href="#/child">Evil Child</Dropdown.Item>
+                </DropdownButton>
+                <DropdownButton onSelect={handleSetting} id="setting" title="Select your setting">
+                  <Dropdown.Item href="#/college">College</Dropdown.Item>
+                  <Dropdown.Item href="#/mythology">Mythology</Dropdown.Item>
+                  <Dropdown.Item href="#/scifi">Sci-Fi</Dropdown.Item>
+                  <Dropdown.Item href="#/gothic">Gothic</Dropdown.Item>
+                </DropdownButton>
+                <DropdownButton onSelect={handleLive} id="live" title="Do you live or die?">
+                  <Dropdown.Item href="#/live">Live 👼</Dropdown.Item>
+                  <Dropdown.Item href="#/die">Die 💀</Dropdown.Item>
+              </DropdownButton>
+            <button type="submit">submit</button>
             </form>
         </div>
     )

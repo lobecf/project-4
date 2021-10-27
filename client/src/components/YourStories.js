@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function YourStories () {
-    // const [selectStory, setSelectStory] = useState([])
+    const [selectStory, setSelectStory] = useState([])
     
     // fetch("/stories", {
     //     method: "GET",

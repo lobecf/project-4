@@ -31,38 +31,38 @@ function SignUp({ setUser }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
-        <label htmlFor="username">Username</label>
         <input
+          className="login-signup-form"
           type="text"
-          id="username"
+          placeholder="Username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
         <input
+          className="login-signup-form"
           type="password"
-          id="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="password">Password Confirmation</label>
         <input
-          type="password"
+          className="login-signup-form"
+          placeholder="Confirm password"
           id="password_confirmation"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="imageUrl">Profile Image</label>
         <input
+          className="login-signup-form"
           type="text"
-          id="imageUrl"
+          placeholder="Paste image URL"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <button className="login-signup-button" type="submit">Sign Up</button>
     </form>
     </div>
   );
