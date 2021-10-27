@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_stories
+  resources :stories
   resource :users, only: [:show, :index]
 
   post "/login", to: "sessions#create"
