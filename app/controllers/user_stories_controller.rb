@@ -1,17 +1,21 @@
 class UserStoriesController < ApplicationController
     def show 
-        user_story = UserStory.find_by(:id params[:id])
+        user_story = UserStory.find_by(id: params[:id])
         render json: user_story
     end
     
     def create 
+        byebug
         user_story = UserStory.create(user_story_params)
-        render json: user_story
+        render json: user_story, status: :created
+        [:story]
+        
+        
     end
 
     private
     def user_story_params
-        params.permit(:main_character, :type_of_horror, :setting, :live_or_die, :user_id, :story_id)
+        params.permit(:main_character, :options_type, :settings_type, :live_type, :user_id, :story_id)
     end
 
 end

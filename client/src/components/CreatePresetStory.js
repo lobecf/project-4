@@ -5,10 +5,10 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CreatePresetStory ( ) {
-    const [mainCharacter, setMainCharacter] = useState("");
-    const [optionsType, setTypeOfHorror] = useState("");
-    const [settingsType, setSetting] = useState("");
-    const [liveType, setLiveOrDie] = useState("");
+    const [main_character, setMainCharacter] = useState("");
+    const [options_type, setTypeOfHorror] = useState("");
+    const [settings_type, setSetting] = useState("");
+    const [live_type, setLiveOrDie] = useState("");
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -18,10 +18,10 @@ function CreatePresetStory ( ) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          mainCharacter,
-          optionsType,
-          settingsType,
-          liveType,
+          main_character,
+          options_type,
+          settings_type,
+          live_type,
         }),
       }).then((r) => {
         if (r.ok) {
@@ -49,7 +49,7 @@ function CreatePresetStory ( ) {
                 <input
                 type="text"
                 autoComplete="off"
-                value={mainCharacter}
+                value={main_character}
                 onChange={(e) => setMainCharacter(e.target.value)}
                 />
                 <DropdownButton onSelect={handleOption} id="options" title="Select horror genre">
