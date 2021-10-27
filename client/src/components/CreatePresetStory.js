@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 function CreatePresetStory ( {setUserStoryInfo} ) {
     const [mainCharacter, setMainCharacter] = useState("");
-    const [typeOfHorror, setTypeOfHorror] = useState("");
-    const [setting, setSetting] = useState("");
-    const [liveOrDie, setLiveOrDie] = useState("");
+    const [optionsType, setTypeOfHorror] = useState(["Select horror genre", "Slasher", "Monster", "Evil Child"]);
+    const [settingsType, setSetting] = useState(["Select setting", "College", "Mythology", "Sci-Fi", "Gothic"]);
+    const [liveType, setLiveOrDie] = useState(["Do you live or die?", "live", "die"]);
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -15,9 +17,9 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
         },
         body: JSON.stringify({
           mainCharacter,
-          typeOfHorror,
-          setting,
-          liveOrDie,
+          optionsType,
+          settingsType,
+          liveType,
         }),
       }).then((r) => {
         if (r.ok) {
@@ -36,25 +38,21 @@ function CreatePresetStory ( {setUserStoryInfo} ) {
                 value={mainCharacter}
                 onChange={(e) => setMainCharacter(e.target.value)}
                 />
-                <label htmlFor="type-of-horror">Type of Horror</label>
-                <input
-                type="text"
-                value={typeOfHorror}
-                onChange={(e) => setTypeOfHorror(e.target.value)}
-                />
-                <label htmlFor="setting">Setting</label>
-                <input
-                type="text"
-                value={setting}
-                onChange={(e) => setSetting(e.target.value)}
-                />
-                <label htmlFor="live-or-die">Live or Die</label>
-                <input
-                type="text"
-                value={liveOrDie}
-                onChange={(e) => setLiveOrDie(e.target.value)}
-                />
-                
+                <Dropdown 
+                options={optionsType} 
+                onChange={(e) => setTypeOfHorror(e.target.value)} 
+                value={optionsType[0]} 
+                title="Select a horror genre" />
+                <Dropdown 
+                options={settingsType} 
+                onChange={(e) => setSetting(e.target.value)} 
+                value={settingsType[0]} 
+                placeholder="Select a setting" />
+                <Dropdown 
+                options={liveType} 
+                onChange={(e) => setLiveOrDie(e.target.value)} 
+                value={liveType[0]} 
+                placeholder="Select a horror genre" />
                 <button type="submit">Submit</button>
             </form>
         </div>
