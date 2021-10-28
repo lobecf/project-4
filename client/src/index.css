@@ -1,53 +1,175 @@
-/* h1 {
-    font-size: 30px;
-    padding: 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #0e3742;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-    line-height: 0.70em;
-    outline: none;
-    animation: animate 5s linear infinite;
+.neonText {
+    font-size: 40px;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+  }
+
+
+/* Additional styling */ 
+  
+h1 {
+    padding-top: 20px;
+    padding-left: 20px;
+    font-family: "eater";
 }
-@keyframes animate 
-{
-    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
-    {
-        color: #0e3742;
-        text-shadow: none;
-    }
-    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
-    {
-        color: #ffff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 40px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 1600px #03bcf4,
-    }
-} */
+
+.pulsate {
+     animation: pulsate 1.5s infinite alternate;     
+}
+
+@keyframes pulsate {
+    
+  100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  
+  }
+  
+  0% {
+
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px #0fa,
+    0 0 45px #0fa,
+    0 0 55px #0fa,
+    0 0 70px #0fa,
+    0 0 80px #0fa;
+
+}
+}
 
 h2 {
-    font-size: 20px
+    font-size: 10px;
+}
+
+h4 {
+    font-size: 30px;
 }
 
 .nav-bar-container {
     text-align: left;
-    background: #07252d
+    background: #010a01
+
+    
 }
 
 .nav-bar-link {
     text-decoration: none;
     display: inline;
-    padding: 8px;
+    padding: 20px;
+    font-size: 12px;
+    font-family: "roboto slab";
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.nav-bar-link.hover {
+    text-decoration: none;
+    display: inline;
+    padding: 20px;
+    font-size: 12px;
+    font-family: "roboto slab";
+    color: rgb(87, 2, 87);
 }
 
 .login-signup-form-container {
+    padding: 20px;
     display: block;
     align-items: left;
 }
 
 .login-signup-form {
+    font-size: 13px;
+    padding-left: 15px;
+    align-items: left;
+    background: gray;
+    justify-content: left;
+    width: 270px;
+    height: 30px;
+    display: block;
+    margin-bottom: 1%;
+    border: none;
+    box-sizing: border-box;
+}
+
+.login-signup-button {
+    text-decoration: none;
+    font-size: 13px;
+    background: gray;
+    justify-content: left;
+    width: 270px;
+    height: 30px;
+    display: block;
+    border: none;
+    box-sizing: border-box;
+}
+
+.logout-btn {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "roboto slab";
+    color: white;
+}
+.profile-bar-container {
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+.profile-bar-wrapper {
+    margin: 15px;
+}
+
+.profile-name {
+    font-size: 15px;
+    display:inline;
+    font-family: "roboto slab";
+    text-transform: uppercase;
+}
+.thumbnail {
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    display:inline;
+}
+
+.profile-bar-button {
+    font-size: 15px;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-family: "roboto slab";
+}
+
+.create-story-container {
+    margin-left: 50px;
+}
+
+.main-character-input {
     padding-left: 15px;
     align-items: left;
     background: none;
@@ -61,23 +183,6 @@ h2 {
     box-sizing: border-box;
 }
 
-.login-signup-button {
-    text-decoration: none;
-    font-family: "Raleway";
-    background: gray;
-    justify-content: left;
-    width: 270px;
-    height: 30px;
-    display: block;
-    border: black solid 3px;
-    border-radius: 15px;
-    box-sizing: border-box;
-}
-
-.logout-btn {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
+body {
+    background-color:  #262626 ;
 }

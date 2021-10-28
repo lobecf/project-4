@@ -25,7 +25,7 @@ function CreatePresetStory ( ) {
         }),
       }).then((r) => {
         if (r.ok) {
-          r.json().then((user) => console.log(user));
+          r.json().then((storyInfo) => console.log(storyInfo));
         }
       });
     }
@@ -42,32 +42,35 @@ function CreatePresetStory ( ) {
       setLiveOrDie(e)
     }
 
+    
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="main-character">Main Character</label>
-                <input
+            <form className="create-story-container" onSubmit={handleSubmit}>
+                <input className="login-signup-form"
                 type="text"
+                placeholder="Type main character"
                 autoComplete="off"
                 value={main_character}
                 onChange={(e) => setMainCharacter(e.target.value)}
                 />
-                <DropdownButton onSelect={handleOption} id="options" title="Select horror genre">
+                <DropdownButton className="login-signup-form" onSelect={handleOption} id="options" title="Select horror genre">
                   <Dropdown.Item href="#/slasher">Slasher</Dropdown.Item>
                   <Dropdown.Item href="#/monster">Monster</Dropdown.Item>
                   <Dropdown.Item href="#/child">Evil Child</Dropdown.Item>
                 </DropdownButton>
-                <DropdownButton onSelect={handleSetting} id="setting" title="Select your setting">
+                <DropdownButton className="login-signup-form" onSelect={handleSetting} id="setting" title="Select your setting">
                   <Dropdown.Item href="#/college">College</Dropdown.Item>
                   <Dropdown.Item href="#/mythology">Mythology</Dropdown.Item>
                   <Dropdown.Item href="#/scifi">Sci-Fi</Dropdown.Item>
                   <Dropdown.Item href="#/gothic">Gothic</Dropdown.Item>
                 </DropdownButton>
-                <DropdownButton onSelect={handleLive} id="live" title="Do you live or die?">
+                <DropdownButton className="login-signup-form" onSelect={handleLive} id="live" title="Do you live or die?">
                   <Dropdown.Item href="#/live">Live 👼</Dropdown.Item>
                   <Dropdown.Item href="#/die">Die 💀</Dropdown.Item>
               </DropdownButton>
-            <button type="submit">submit</button>
+
+
+            <button className="login-signup-button" type="submit">submit</button>
             </form>
         </div>
     )

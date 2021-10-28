@@ -12,15 +12,16 @@ function NavBar({ user, setUser }) {
 
   return (
     <header className="nav-bar-container">
-      <h1>Horror Story</h1>
+        <h1 className="neonText pulsate">HORROR STORY APP
+        </h1>
       <div>
-      <Link className="nav-bar-link" to="/">Home</Link>
+      <Link className="nav-bar-link" to="/">HOME</Link>
         {user ? (
-          <button className="logout-btn" onClick={handleLogoutClick}>Logout</button>
+          <button className="logout-btn" onClick={handleLogoutClick}>LOGOUT</button>
         ) : (
           <>
-            <Link className="nav-bar-link" to="/signup">Signup</Link>
-            <Link className="nav-bar-link" to="/login">Login</Link>
+            <Link className="nav-bar-link" to="/signup">SIGNUP</Link>
+            <Link className="nav-bar-link" to="/login">LOGIN</Link>
           </>
         )}
       </div>

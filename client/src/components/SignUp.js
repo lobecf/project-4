@@ -29,8 +29,7 @@ function SignUp({ setUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
+      <form onSubmit={handleSubmit} className="login-signup-form-container">
         <input
           className="login-signup-form"
           type="text"
@@ -50,7 +49,6 @@ function SignUp({ setUser }) {
         <input
           className="login-signup-form"
           placeholder="Confirm password"
-          id="password_confirmation"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
@@ -58,7 +56,7 @@ function SignUp({ setUser }) {
         <input
           className="login-signup-form"
           type="text"
-          placeholder="Paste image URL"
+          placeholder="Paste profile image URL"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
         />

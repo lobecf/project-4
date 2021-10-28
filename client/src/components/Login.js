@@ -23,7 +23,6 @@ function Login({ setUser }) {
   return (
     <div>
       <form onSubmit={handleSubmit} className="login-signup-form-container">
-        <h2>Login</h2>
         <input
           className="login-signup-form"
           type="text"

@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-      <main>
+      <main className="body-fill">
         {user ? (
           <Switch>
             <Route path="/">
