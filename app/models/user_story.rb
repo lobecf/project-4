@@ -1,7 +1,6 @@
 class UserStory < ApplicationRecord
   belongs_to :story
   belongs_to :user
-  attr_accessible :main_character, :settings_type, :live_type
 
 
   def story(main, chooser, alive)
