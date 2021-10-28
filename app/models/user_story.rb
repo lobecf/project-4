@@ -3,7 +3,7 @@ class UserStory < ApplicationRecord
   belongs_to :user
 
 
-  def story(main, chooser, alive)
+  def create_story(main, chooser, alive)
     main = main
     if chooser == 1 && alive == true 
         place = "Holy Pyramid"
@@ -86,7 +86,7 @@ class UserStory < ApplicationRecord
 
 
     end
-    story = "#{main} ran for the door of the #{place} and pulled it open. #{main} was being chased by the legendary #{monster}. A being so evil and heinous that it #{killing}. The #{monster} was right behind #{main} as they dove in and slammed the door shut. When #{main}’s eyes became accustomed to the darkness they couldn’t believe what they had found!
+    puts "#{main} ran for the door of the #{place} and pulled it open. #{main} was being chased by the legendary #{monster}. A being so evil and heinous that it #{killing}. The #{monster} was right behind #{main} as they dove in and slammed the door shut. When #{main}’s eyes became accustomed to the darkness they couldn’t believe what they had found!
 
     The old man in the #{old} had told of this legend! The key to victory was here. It was just too bad that #{monster} had burst through the wall and killed the old man with its #{weapon}. However, here, inside this #{place} was the key to beating this fiend once and for all. #{explanation}. #{main} held the #{tool} up into the air—finally they were filled with hope!
 

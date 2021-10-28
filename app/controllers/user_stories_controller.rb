@@ -5,7 +5,7 @@ class UserStoriesController < ApplicationController
     end
     
     def create 
-        
+        byebug
         user_story = UserStory.create(user_story_params)
         render json: user_story, status: :created
         
