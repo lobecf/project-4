@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_214852) do
+ActiveRecord::Schema.define(version: 2021_10_29_132256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 2021_10_27_214852) do
     t.string "gifs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_stories", force: :cascade do |t|
     t.string "main_character"
     t.string "options_type"
     t.string "settings_type"
     t.string "live_type"
-    t.bigint "story_id", null: false
-    t.bigint "user_id", null: false
+  end
+
+  create_table "user_stories", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
     t.index ["story_id"], name: "index_user_stories_on_story_id"
     t.index ["user_id"], name: "index_user_stories_on_user_id"
   end
