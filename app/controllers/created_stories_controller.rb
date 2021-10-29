@@ -4,6 +4,7 @@ class CreatedStoriesController < ApplicationController
     end
 
     def create
+        user = User.find_by(id: session[:user_id])
         created_story = user.created_stories.build(created_params)
         created_story.save
         render json: created_story, status: :created
