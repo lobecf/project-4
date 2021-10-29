@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_created_stories
+  resources :created_stories
   resources :user_stories
   resources :stories
   resource :users, only: [:show, :index]

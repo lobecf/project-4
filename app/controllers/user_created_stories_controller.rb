@@ -1,0 +1,2 @@
+class UserCreatedStoriesController < ApplicationController
+end

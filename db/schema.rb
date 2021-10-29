@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_132256) do
+ActiveRecord::Schema.define(version: 2021_10_29_152139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "created_stories", force: :cascade do |t|
+    t.string "name"
+    t.string "main_character"
+    t.string "options_type"
+    t.string "settings_type"
+    t.string "live_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "stories", force: :cascade do |t|
     t.string "name"
@@ -26,6 +36,15 @@ ActiveRecord::Schema.define(version: 2021_10_29_132256) do
     t.string "options_type"
     t.string "settings_type"
     t.string "live_type"
+  end
+
+  create_table "user_created_stories", force: :cascade do |t|
+    t.bigint "users_id", null: false
+    t.bigint "created_stories_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_stories_id"], name: "index_user_created_stories_on_created_stories_id"
+    t.index ["users_id"], name: "index_user_created_stories_on_users_id"
   end
 
   create_table "user_stories", force: :cascade do |t|
@@ -45,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_10_29_132256) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "user_created_stories", "created_stories", column: "created_stories_id"
+  add_foreign_key "user_created_stories", "users", column: "users_id"
   add_foreign_key "user_stories", "stories"
   add_foreign_key "user_stories", "users"
 end
