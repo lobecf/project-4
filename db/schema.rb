@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_174437) do
+ActiveRecord::Schema.define(version: 2021_10_29_222221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2021_10_29_174437) do
 
   create_table "user_created_stories", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "created_stories_id", null: false
+    t.bigint "created_story_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["created_stories_id"], name: "index_user_created_stories_on_created_stories_id"
+    t.index ["created_story_id"], name: "index_user_created_stories_on_created_story_id"
     t.index ["user_id"], name: "index_user_created_stories_on_user_id"
   end
 
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_174437) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "user_created_stories", "created_stories", column: "created_stories_id"
+  add_foreign_key "user_created_stories", "created_stories"
   add_foreign_key "user_created_stories", "users"
   add_foreign_key "user_stories", "stories"
   add_foreign_key "user_stories", "users"

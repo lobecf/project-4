@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   post "/preset-story", to: "created_stories#create"
+  get "/user_index", to: "users#user_index"
 
 end

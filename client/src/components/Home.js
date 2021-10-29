@@ -9,7 +9,7 @@ function Home({ user }) {
   const [userStories, setUserStories] = useState([])
 
   useEffect(() => {
-    fetch(`/created_stories/${user.id}`)
+    fetch(`/user_index/`)
       .then((r) => r.json())
       .then((userStories) => setUserStories(userStories));
   }, []);console.log(userStories)

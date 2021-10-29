@@ -7,6 +7,7 @@ class CreatedStoriesController < ApplicationController
         user = User.find_by(id: session[:user_id])
         created_story = user.created_stories.build(created_params)
         created_story.save
+        byebug
         render json: created_story, status: :created
 
     end
