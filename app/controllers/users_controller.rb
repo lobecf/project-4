@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     def user_index
       user = User.find_by(id: session[:user_id])
       render json: user.created_stories
+    end
 
     def index
         users = Users.all
