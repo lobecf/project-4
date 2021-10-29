@@ -36,7 +36,7 @@ function App() {
               <Login setUser={setUser} />
             </Route>
             <Route path="/">
-              <Home />
+              <Home/>
             </Route>
           </Switch>
         )}

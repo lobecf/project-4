@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 
-  post "/preset-story", to: "user_stories#create"
+  post "/preset-story", to: "created_stories#create"
 
 end

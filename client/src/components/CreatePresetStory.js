@@ -5,6 +5,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CreatePresetStory ( ) {
+    const [name, setName] = useState("");
     const [main_character, setMainCharacter] = useState("");
     const [options_type, setTypeOfHorror] = useState("");
     const [settings_type, setSetting] = useState("");
@@ -18,6 +19,7 @@ function CreatePresetStory ( ) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          name,
           main_character,
           options_type,
           settings_type,
@@ -46,6 +48,13 @@ function CreatePresetStory ( ) {
     return (
         <div>
             <form className="create-story-container" onSubmit={handleSubmit}>
+                <input className="name-signup-form"
+                type="text"
+                placeholder="Title of story"
+                autoComplete="off"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                />
                 <input className="login-signup-form"
                 type="text"
                 placeholder="Type main character"

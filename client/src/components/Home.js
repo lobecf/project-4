@@ -9,10 +9,10 @@ function Home({ user }) {
   const [userStories, setUserStories] = useState([])
 
   useEffect(() => {
-    fetch(`/user-stories/${userStories}`)
+    fetch(`/created_stories/${user.id}`)
       .then((r) => r.json())
-      .then(setUserStories);
-  }, []);
+      .then((userStories) => setUserStories(userStories));
+  }, []);console.log(userStories)
   
   
   const handleClick = (e) => {
@@ -31,14 +31,14 @@ function Home({ user }) {
           <p className="profile-name">{user.username}'s Profile</p>
         </div>
         <div className="profile-bar-wrapper">
+          <img className="thumbnail" src="https://cdn2.iconfinder.com/data/icons/lucid-generic/24/paint_color_palette_art_drawing-512.png"/>  
+          <button className="profile-bar-button" onClick={handleClick} name="your-stories">Your Stories</button>
+          { showComponent === "your-stories" && <YourStories user={user} userStories={userStories}/> }
+        </div>
+        <div className="profile-bar-wrapper">
           <img className="thumbnail" src="https://cdn2.iconfinder.com/data/icons/lucid-generic/24/add_new_button_plus_create-1024.png"/>
           <button className="profile-bar-button" onClick={handleClick} name="create-story">Create Stories</button>
           { showComponent === "create-story" && <CreatePresetStory/> }
-        </div>
-        <div className="profile-bar-wrapper">
-          <img className="thumbnail" src="https://cdn2.iconfinder.com/data/icons/lucid-generic/24/paint_color_palette_art_drawing-512.png"/>  
-          <button className="profile-bar-button" onClick={handleClick} name="your-stories">Your Stories</button>
-          { showComponent === "your-stories" && <YourStories userStories={userStories}/> }
         </div>
         <div className="profile-bar-wrapper">
           <img className="thumbnail" src="https://cdn2.iconfinder.com/data/icons/lucid-generic/24/heart_like_love_favourite_dating-1024.png"/>

@@ -4,7 +4,8 @@ class CreatedStoriesController < ApplicationController
     end
 
     def create
-        created_story = CreatedStory.create(created_params)
+        created_story = user.created_stories.build(created_params)
+        created_story.save
         render json: created_story, status: :created
 
     end
@@ -52,5 +53,7 @@ class CreatedStoriesController < ApplicationController
         CreatedStory.find_by(id: params[:id])
 
     end
+
+    
 
 end
